@@ -1,10 +1,31 @@
 debugger
-let nombre = prompt("Ingrese su nombre para una asistencia personalizada: ")
+const IVA = 1.21
 
-inicio()
+class Producto{
+    constructor(nombre, precio, stock){
+        this.nombre = nombre
+        this.precio = precio
+        this.stock = stock
+    }
+    precioFinal(){
+        return this.precio * IVA
+    }
+    nombreUC(){
+        return this.nombre.toUpperCase()
+    }
+}
 
-function inicio () {
-    console.log("Bienvenid@", nombre)
+let acceso = confirm("¿Usted es vendedor?")
+    if(acceso){
+        console.log("A CONTINUACION COMENZARA A AGREGAR PRODUCTOS")
+        agregarProducto()
+    }else {
+        let nombrePers = prompt("Ingrese su nombre para una asistencia personalizada: ")
+        inicio(nombrePers)
+    }
+
+function inicio (nombrePers) {
+    console.log("Bienvenid@", nombrePers)
     let eleccion = parseInt(prompt("¿Que esta buscando para combatir el Verano ?: \n1) Aire Acondicionado \n2) Ventilador \n3) Salir"))
         if(eleccion>=1 && eleccion<=2){
             console.log("Su eleccion fue:", eleccion)
@@ -39,4 +60,17 @@ function menu(opcion) {
             }
     }
 }
+
+function agregarProducto() {
+    let nombre = prompt("Ingrese nombre del producto:")
+    let precio = parseInt(prompt("Ingrese precio:"))
+    let stock = parseInt(prompt("Ingrese stock disponible:"))
+
+    const producto1 = new Producto(nombre, precio, stock)
+    console.log(producto1)
+}
+
+
+
+
 
