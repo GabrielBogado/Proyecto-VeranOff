@@ -6,10 +6,6 @@ if (acceso) {
   let nombrePers = prompt(
     "Ingrese su nombre para una asistencia personalizada: "
   );
-  inicio(nombrePers);
-}
-
-function inicio(nombrePers) {
   console.log("Bienvenid@", nombrePers);
   let eleccion = parseInt(
     prompt(
@@ -26,21 +22,6 @@ function inicio(nombrePers) {
     } else {
       return inicio();
     }
-  }
-}
-
-function menu(opcion) {
-  switch (opcion) {
-    case 1:
-      let aire = parseInt(
-        prompt(
-          "Que tipo de aire acondicionado quiere?: \n1) Aire Ventana \n2) Aire Split \n3) Volver al menu"
-        )
-      );
-      if (aire == 1) {
-        console.log("eleccion del aire ventana");
-      } else if (aire == 2) {
-        console.log("eleccion de aire split");
       } else {
         inicio();
       }
